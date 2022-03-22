@@ -34,7 +34,7 @@ func HandleConnection(conn net.Conn) {
 		messages <- fmt.Sprintf("%s: %s", clientName, inputMessage.Text())
 	}
 	leavingClients <- message
-	message <- fmt.Sprintf("%s said goobye! \n", clientName)
+	messages <- fmt.Sprintf("%s said goobye! \n", clientName)
 
 }
 func MessageWrite(conn net.Conn, messages <-chan string) {
